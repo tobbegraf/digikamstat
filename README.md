@@ -11,7 +11,7 @@ It will not alter the photos or the database file.
 
 ## Installation
 
-- Make sure you have the pysid6 and sqlite3 packages for python installed
+- Make sure you have the pyside6 and sqlite3 packages for python installed
 - download digikamstat release
 - extract the archive file
 - copy the file digikam4.db from your digikam folder to the folder where the script is stored
