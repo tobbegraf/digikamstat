@@ -17,8 +17,8 @@ It will not alter the photos or the database file.
 - copy the file digikam4.db from your digikam folder to the folder where the script is stored
 - run the script digikamstat.py (it's possible that you have to set the execution permission on the file)
 - or run it from the konsole 
- - change to the directory you have extracted the archive
- - run python (or python3) ./digikamstat.py
+  - change to the directory you have extracted the archive
+  - run python (or python3) ./digikamstat.py
  
 ## Usage
 
