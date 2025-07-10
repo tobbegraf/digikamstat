@@ -58,3 +58,6 @@ If possible, please start the script from the command line and share the output 
 
 ### digikamstat window with report with top ten charts
 ![digikamstat window with report with top ten charts](/screenshots/mainwindow6.png?raw=true "digikamstat window")
+
+### digikamstat window with focal lentgth report for one album
+![digikamstat window with focal lentgth report for one album](/screenshots/mainwindow7.png?raw=true "digikamstat window")
