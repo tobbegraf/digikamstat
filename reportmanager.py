@@ -16,10 +16,7 @@ class ReportManager():
         self.watch.start("init Report Manager")
 
         self.CurrentDir = os.path.dirname(os.path.abspath(__file__))
-        
-        self.db = DBManager() 
-        self.db.Connect(self.CurrentDir + "/digikam4.db")
-        
+            
         self.report = Report()
 
         self.sql_images = 'from Images where Images.category = 1 and Images.status = 1'
@@ -83,6 +80,14 @@ class ReportManager():
 
         self.watch.stop("init Report Manager")
         
+    def connect_db(self):
+        
+        self.db = DBManager() 
+        result = self.db.Connect(self.CurrentDir + "/digikam4.db")
+        
+        if(result == False):
+            return False
+            
     def report_overview(self):
         
         self.watch.start("create Overview")

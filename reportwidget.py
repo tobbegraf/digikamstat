@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from PySide6.QtCore import QObject,  Qt
-from PySide6.QtWidgets import QWidget,  QLabel,  QHBoxLayout, QVBoxLayout, QComboBox, QPushButton,  QApplication
+from PySide6.QtWidgets import QWidget,  QLabel,  QHBoxLayout, QVBoxLayout, QComboBox, QPushButton,  QApplication,  QMessageBox
 from PySide6.QtWebEngineWidgets import QWebEngineView
 
 import calendar
@@ -21,6 +21,13 @@ class ReportWidget(QWidget, QObject):
         self.watch.start("init Report Widget")
         
         self.report_manager = ReportManager()
+        
+        success = self.report_manager.connect_db()
+        
+        if(success == False):
+            QMessageBox.critical(None,  "Error",  "The digikam database file (digikam4.db) could not be opened. Please copy the database file in the script directory.")
+            return
+        
         self.report_view = QWebEngineView()
         self.report_page = ReportWebPage(self.create_report_from_url)
         self.report_view.setPage(self.report_page)

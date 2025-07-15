@@ -17,6 +17,8 @@ class DBManager():
         if not 'watch' in dir(self):
             self.watch = StopWatch()
             self.cache = {}
+            
+        self.connected = False
     
     def __call__(self):
         return self
@@ -26,6 +28,7 @@ class DBManager():
             self.conn = sqlite3.connect(dbname)
             self.cur = self.conn.cursor()
             self.cur.execute('PRAGMA query_only=1;')
+            self.connected = True
             return True
         else:
             print("Connot connect to Databse: %s" % dbname);
@@ -138,6 +141,7 @@ class DBManager():
         return self.cache[query]
     
     def close_db(self):
-        
-        print("closing db")
-        self.conn.close()
+
+        if(self.connected == True):
+            print("closing db")
+            self.conn.close()
